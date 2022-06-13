@@ -20,9 +20,17 @@ namespace Alcor
         #endregion
 
         #region 事件:程式入口
-        private void Start()
+        private void Awake()//喚醒事件:在開始前呼叫元件
+        {
+            ani = GetComponent<Animator>();
+        }
+        private void Start()//開始事件:遊戲開始前播放一次
         {
             print("Y●皿●Y");
+        }
+        private void Update()//更新事件:每秒直行約60次(fps)
+        {
+            print("<color=#87CEEB>update</color>");
         }
         #endregion
 
