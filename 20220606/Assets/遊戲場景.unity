@@ -685,7 +685,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &1378894615
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -715,7 +715,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedRun: 6
-  height: 350
 --- !u!114 &1378894617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -728,6 +727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d6b68a45d797df469f72bfa225ab820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  height: 500
 --- !u!1 &1645335577
 GameObject:
   m_ObjectHideFlags: 0
@@ -4076,7 +4076,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.778481, y: 1}
+    m_SensorSize: {x: 1.7741935, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
