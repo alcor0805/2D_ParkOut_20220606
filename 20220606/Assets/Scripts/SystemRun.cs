@@ -25,6 +25,14 @@ namespace Alcor
         #endregion
 
         #region 事件:程式入口
+        private void OnEnable()
+        {
+            
+        }
+        private void OnDisable()
+        {
+            rig.velocity = Vector3.zero;
+        }
         private void Awake()//喚醒事件:在開始前呼叫元件
         {
             ani = GetComponent<Animator>();
