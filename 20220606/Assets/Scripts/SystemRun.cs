@@ -43,6 +43,7 @@ namespace Alcor
             //print("Y●皿●Y");
         }
         private void Update()//更新事件:每秒直行約60次(fps)
+
         {
             //print("<color=#87CEEB>update</color>");
             Run();
