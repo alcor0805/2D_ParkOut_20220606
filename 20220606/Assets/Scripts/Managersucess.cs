@@ -9,6 +9,9 @@ namespace Alcor
         private SystemRun systemRun;
         [SerializeField, Header("跳躍控制")]
         private SystemJump systemJump;
+        [SerializeField, Header("結束管理")]
+        private GameoverCanva gameoverCanva; 
+
 
         #region Trigger
         /// <summary>
@@ -21,6 +24,8 @@ namespace Alcor
             {
                 systemJump.enabled = false;
                 systemRun.enabled = false;
+                gameoverCanva.enabled = true;
+                gameoverCanva.sucesstext = "恭喜你過關了~~!";
             }
         }
 
