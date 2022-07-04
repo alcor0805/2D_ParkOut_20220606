@@ -7,10 +7,18 @@ namespace Alcor
         #region 資料
         [SerializeField, Header("跳躍高度"), Tooltip("調整跳躍高度"), Range(0, 1000)]
         private float height = 350;
-
+        [SerializeField, Header("調整地板大小")]
+        private Vector3 groundsize = new Vector3(1, 1, 1);
+        [SerializeField, Header("調整地板位移")]
+        private Vector3 groundset;
+        [SerializeField,Header("調整地板顏色")]
+        private Color groundcolor = new (1, 0, 0.2f, 0.5f);
+        [SerializeField, Header("調整地板圖層")]
+        private LayerMask layerGround;
         private Animator ani;
         private Rigidbody2D rig;
         private bool jumpclick;
+        private bool isGround;
         #endregion
 
         #region 功能
@@ -20,18 +28,28 @@ namespace Alcor
             {
                 jumpclick = true;
             }
+            else if (Input.GetKeyUp(KeyCode.Space))
+            {
+                jumpclick = false;
+            }
         }
         private void jumpforce()
         {
-            if (jumpclick)
+            if (jumpclick && isGround)
             {
                 rig.AddForce(new Vector2(0,height));
+
                 jumpclick = false;
             }
         }
         #endregion
 
         #region 事件
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = groundcolor;
+            Gizmos.DrawCube(transform.position + groundset, groundsize);//draw(繪畫位置,繪畫大小)
+        }
         private void Awake()
         {
             ani = GetComponent<Animator>();
@@ -40,13 +58,20 @@ namespace Alcor
         private void Update()
         {
                 JumpKey();
+            Groundcheck();
         }
         private void FixedUpdate()
         {
             jumpforce();
         }
         #endregion
-
+        private void Groundcheck() 
+        {
+            //2D碰撞器=2D物理.碰撞盒子(盒子位置，盒子大小，角度)
+            Collider2D hit = Physics2D.OverlapBox(transform.position + groundset, groundsize, 0,layerGround);
+            //print("碰撞到的物件: " + hit.name);
+            isGround = hit;
+        }
 
 
 
