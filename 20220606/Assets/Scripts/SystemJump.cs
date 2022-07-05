@@ -15,10 +15,14 @@ namespace Alcor
         private Color groundcolor = new (1, 0, 0.2f, 0.5f);
         [SerializeField, Header("調整地板圖層")]
         private LayerMask layerGround;
+        [SerializeField, Header("音效來源")]
+        private AudioClip jumpmusic;
+        private string jumpname="跳躍開關";
         private Animator ani;
         private Rigidbody2D rig;
         private bool jumpclick;
         private bool isGround;
+        private AudioSource aud;
         #endregion
 
         #region 功能
@@ -38,9 +42,14 @@ namespace Alcor
             if (jumpclick && isGround)
             {
                 rig.AddForce(new Vector2(0,height));
-
+                aud.PlayOneShot(jumpmusic, Random.Range(0.7f,1.5f));
                 jumpclick = false;
+
             }
+        }
+        private void UpdateAnimator() 
+        {
+            ani.SetBool(jumpname, !isGround);
         }
         #endregion
 
@@ -54,11 +63,13 @@ namespace Alcor
         {
             ani = GetComponent<Animator>();
             rig = GetComponent<Rigidbody2D>();
+            aud = GetComponent<AudioSource>();
         }
         private void Update()
         {
                 JumpKey();
             Groundcheck();
+            UpdateAnimator();
         }
         private void FixedUpdate()
         {

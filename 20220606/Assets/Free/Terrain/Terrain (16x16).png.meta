@@ -36,8 +36,8 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
+    wrapU: 0
+    wrapV: 0
     wrapW: 1
   nPOTScale: 0
   lightmap: 0
@@ -49,7 +49,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -3140,7 +3140,7 @@ TextureImporter:
     nameFileIdTable:
       Terrain (16x16)_128: -1196999622
       Terrain (16x16)_136: -1805034220
-      Terrain (16x16)_0: 982674601
+      Terrain (16x16)_91: -292178691
       Terrain (16x16)_89: 1050959016
       Terrain (16x16)_74: -742844157
       Terrain (16x16)_53: 2045493851
@@ -3279,7 +3279,7 @@ TextureImporter:
       Terrain (16x16)_40: 1039917470
       Terrain (16x16)_99: 1780114447
       Terrain (16x16)_131: -395554785
-      Terrain (16x16)_91: -292178691
+      Terrain (16x16)_0: 982674601
       Terrain (16x16)_119: -374371789
       Terrain (16x16)_139: -1385289320
   spritePackingTag: 
